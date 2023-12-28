@@ -1,0 +1,128 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href={%static 'style.css'%}>
+</head>
+<body>
+
+<form method="post">
+  {% csrf_token %}
+  <input type="text" name="city1" placeholder="Enter city 1">
+  <input type="text" name="city2" placeholder="Enter city 2">
+  <button type="submit">Compare Weather</button>
+</form>
+
+<div class="comparison-container">
+    {% if abc1 %}
+    <!--  City 1  -->
+    <div class="city-container">
+      <h1>{{ abc1.city }}</h1>
+    <h2>{{ abc1.temperature }}</h2>
+    <p>{{ abc1.description }}</p>
+    <img src="http://openweathermap.org/img/w/{{ abc1.icon }}.png" alt="{{ abc1.desc1 }}">
+    </div>
+
+    <!--  Day 1  -->
+    <h2>5-Day Forecast</h2>
+        <div class="forecast-container">
+            <div class="forecast">
+                <h3>{{ abc1.day1 }}</h3>
+                <p>{{ abc1.min_temp1 }}</p>
+                <p>{{ abc1.desc1 }}</p>
+                <img src="http://openweathermap.org/img/w/{{ abc1.f_icon1 }}.png" alt="{{ abc1.desc }}">
+            </div>
+
+        <!--  Day 2  -->
+        <div class="forecast">
+            <h3>{{ abc1.day2 }}</h3>
+            <p>{{ abc1.min_temp2 }}</p>
+            <p>{{ abc1.desc2 }}</p>
+            <img src="http://openweathermap.org/img/w/{{ abc1.f_icon2 }}.png" alt="{{ abc1.desc2 }}">
+        </div>
+
+        <!--  Day 3  -->
+        <div class="forecast">
+            <h3>{{ abc1.day3 }}</h3>
+            <p>{{ abc1.min_temp3 }}</p>
+            <p>{{ abc1.desc3 }}</p>
+            <img src="http://openweathermap.org/img/w/{{ abc1.f_icon3 }}.png" alt="{{ abc1.desc3 }}">
+        </div>
+
+        <!--  Day 4  -->
+        <div class="forecast">
+            <h3>{{ abc1.day4 }}</h3>
+            <p>{{ abc1.min_temp4 }}</p>
+            <p>{{ abc1.desc4 }}</p>
+            <img src="http://openweathermap.org/img/w/{{ abc1.f_icon4 }}.png" alt="{{ abc1.desc4 }}">
+        </div>
+
+        <!--  Day 5  -->
+        <div class="forecast">
+            <h3>{{ abc1.day5 }}</h3>
+            <p>{{ abc1.min_temp5 }}</p>
+            <p>{{ abc1.desc5 }}</p>
+            <img src="http://openweathermap.org/img/w/{{ abc1.f_icon5 }}.png" alt="{{ abc1111.desc5 }}">
+        </div>
+    </div>
+    {% endif %}
+
+    <!--  City 2  -->
+    {% if abc2 %}
+    <div class="city-container">
+        <div class="city-container">
+      <h1>{{ abc2.city }}</h1>
+    <h2>{{ abc2.temperature }}</h2>
+    <p>{{ abc2.description }}</p>
+    <img src="http://openweathermap.org/img/w/{{ abc2.icon }}.png" alt="{{ abc2.desc }}">
+    </div>
+
+    <!--  Day 1  -->
+        <div class="forecast-container">
+            <div class="forecast">
+                <h3>{{ abc2.day }}</h3>
+                <p>{{ abc2.min_temp }}</p>
+                <p>{{ abc2.desc }}</p>
+                <img src="http://openweathermap.org/img/w/{{ abc2.f_icon }}.png" alt="{{ abc2.desc }}">
+            </div>
+        <!--  Day 2  -->
+        <div class="forecast">
+            <h3>{{ abc2.day2 }}</h3>
+            <p>{{ abc2.min_temp2 }}</p>
+            <p>{{ abc2.desc2 }}</p>
+            <img src="http://openweathermap.org/img/w/{{ abc2.f_icon2 }}.png" alt="{{ abc2.desc2 }}">
+        </div>
+
+        <!--  Day 3  -->
+        <div class="forecast">
+            <h3>{{ abc2.day3 }}</h3>
+            <p>{{ abc2.min_temp3 }}</p>
+            <p>{{ abc2.desc3 }}</p>
+            <img src="http://openweathermap.org/img/w/{{ abc2.f_icon3 }}.png" alt="{{ abc2.desc3 }}">
+        </div>
+
+        <!--  Day 4  -->
+        <div class="forecast">
+            <h3>{{ abc2.day4 }}</h3>
+            <p>{{ abc2.min_temp4 }}</p>
+            <p>{{ abc2.desc4 }}</p>
+            <img src="http://openweathermap.org/img/w/{{ abc2.f_icon4 }}.png" alt="{{ abc2.desc4 }}">
+        </div>
+
+        <!--  Day 5  -->
+        <div class="forecast">
+            <h3>{{ abc2.day5 }}</h3>
+            <p>{{ abc2.min_temp5 }}</p>
+            <p>{{ abc2.desc5 }}</p>
+            <img src="http://openweathermap.org/img/w/{{ abc2.f_icon5 }}.png" alt="{{ abc2.desc5 }}">
+        </div>
+    </div>
+    {% endif %}
+
+</div>
+
+</body>
+</html>
